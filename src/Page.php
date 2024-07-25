@@ -34,7 +34,7 @@ readonly class Page {
 			$this->title = $this->article->title;
 			$this->body = $this->article->body;
 		} else {
-			$this->title = 'Article editor';
+			$this->title = '';
 			$this->body = '';
 		}
 		$this->articlesList = self::renderArticles( $this->articles );

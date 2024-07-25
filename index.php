@@ -46,7 +46,6 @@ echo "
    <link rel='stylesheet' href='https://design.wikimedia.org/style-guide/css/build/wmui-style-guide.min.css'>
    <link rel='stylesheet' href='styles.css'>
    <title>$page->title</title>
-   <script src='main.js'></script>
 </head>
 <body>
    <div id=header class=header>
@@ -61,10 +60,14 @@ echo "
          	Edit an article by typing the beginning of the title in the title field,
          	selecting the title from the auto-complete list, and changing the text in the textfield.
 		</p>
-         <form action='index.php' method='post'>
-			<input name='title' type='text' placeholder='Article title...' value='$page->title' >
-			<textarea name='body' placeholder='Article body...' >$page->body</textarea>
-            <button type='submit' class='submit-button'>Submit</button>
+         <form id='article-form' action='index.php' method='post'>
+         	<div class='autocomplete-container'>
+				<input id='autocomplete-input' name='title'
+					type='text' placeholder='Article title...' value='$page->title' >
+				<div id='autocomplete-list' class='autocomplete-items'></div>
+			</div>
+			<textarea id='article-body' name='body' placeholder='Article body...' >$page->body</textarea>
+            <button id='article-submit' type='submit' class='submit-button'>Submit</button>
          </form>
          <article>
 			 <h2>Preview</h2>
@@ -77,6 +80,7 @@ echo "
 		 </div>
       </div>
    </div>
+   <script src='main.js' defer></script>
 </body>
 </html>
 ";
