@@ -6,8 +6,7 @@ namespace App\Controller\Handlers;
 
 use App\App;
 
-abstract class AbstractHandler
-{
+abstract class AbstractHandler {
 	/**
 	 * @var App
 	 */
