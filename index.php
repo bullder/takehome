@@ -31,6 +31,7 @@ declare( strict_types=1 );
 /// but as temporary solution I simply cached that
 
 // TODO F (optional): Implement a unit test that operates on part of App.php
+/// DONE.
 
 use App\App;
 use App\Controller\IndexController;
