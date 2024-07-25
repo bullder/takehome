@@ -48,7 +48,7 @@ echo "
    <link rel='stylesheet' href='styles.css'>
    <title>$page->title</title>
 </head>
-<body>
+<body id='article-html'>
    <div id=header class=header>
       <a href='/'>Article editor</a>
       <div>$page->wordCount words written</div>
