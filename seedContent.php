@@ -1,16 +1,24 @@
 <?php
 
-require_once 'globals.php';
+declare( strict_types=1 );
 
-global $wgBaseArticlePath;
+require_once __DIR__ . '/vendor/autoload.php';
 
 $count = 0;
 // TODO: Make the number configurable, so that one can run `php seedContent.php --limit=100`
-for ( $i = 0; $i < 10; $i++ ) {
-	$l = new \joshtronic\LoremIpsum();
-	$l->words();
-	file_put_contents( sprintf( "%s/%s", $wgBaseArticlePath, $l->word() ), $l->paragraphs( 10 ) );
-	echo "Creating article\n";
-	$count++;
+
+use App\App;
+use App\Article;
+use joshtronic\LoremIpsum;
+
+$app = new App();
+
+$options = getopt( '', [ 'limit:' ] );
+$limit = isset( $options['limit'] ) ? (int)$options['limit'] : 10;
+
+$l = new LoremIpsum();
+for ( $i = 0; $i < $limit; $i++ ) {
+	$app->save( new Article( $l->word(), $l->paragraphs( 10 ) ) );
 }
-echo "generated $count articles!";
+
+echo "generated $i articles!";
