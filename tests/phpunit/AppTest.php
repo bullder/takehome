@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types=1 );
+
 namespace Tests;
 
 use App\App;
@@ -12,9 +14,9 @@ class AppTest extends \PHPUnit\Framework\TestCase {
 	/**
 	 * @covers ::fetch
 	 */
-	public function testFetch() {
+	final public function testFetch() {
 		$app = new App();
-		$x = $app->fetch( [ 'title' => 'Foo' ] );
-		$this->assertStringContainsString( 'Use of metasyntactic variables', $x );
+		$x = $app->fetch( 'Foo' );
+		$this->assertStringContainsString( 'Use of metasyntactic variables', $x->body );
 	}
 }
