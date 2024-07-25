@@ -46,7 +46,7 @@ echo "<h2>Create/Edit Article</h2>
 <br />
 <textarea name='body' placeholder='Article body...' >$body</textarea>
 <br />
-<a class='submit-button' href='#' />Submit</a>
+<button type='submit' class='submit-button' href='#' />Submit</button>
 <br />
 <h2>Preview</h2>
 $title\n\n

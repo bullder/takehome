@@ -7,12 +7,67 @@ spec, should be made that way here.
 * TODO B: Ensure that the page is responsive for tablet and mobile.
 */
 
+@media only screen and (min-width: 768px) {
+	.main {width: 90%;}
+}
+
+@media only screen and (min-width: 992px) {
+	.main {width: 60%;}
+}
+
+@media only screen and (min-width: 1200px) {
+	.main {width: 50%;}
+}
+
 .header, .main {
 	padding-left: 16px;
 	padding-right: 16px;
 	line-height: normal;
 }
 
+.header {
+	line-height: 6.4rem;
+}
+
 .header a {
 	float: left;
+}
+
+.header div {
+	float: right;
+}
+
+.main {
+	margin: 0 auto;
+}
+
+.main h2 {
+	margin: 35px 0 10px 0;
+}
+
+.main form {
+	margin-top: 25px;
+}
+
+.main form input,
+.main form textarea,
+.main form button {
+	width: 100%;
+	margin-top: 5px;
+	padding: 10px;
+}
+
+.main form textarea {
+	min-height: 100px;
+}
+
+.main form input,
+.main form textarea {
+	border: 1px solid gray;
+}
+
+.main form button {
+	background-color: cornflowerblue;
+	border: none;
+	color: white;
 }
